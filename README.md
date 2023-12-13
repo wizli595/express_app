@@ -10,3 +10,6 @@
 8) error handler pour user id
 9) cree user plus handler
 10) mise a jour de user
+11) cree une fichier routes remplacer toute les routes 
+12) cree 1ere midelware idValidate 
+
