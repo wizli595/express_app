@@ -1,3 +1,4 @@
+#UPDATES
 1) npm init (skip steps npm init -y)
 2) install express npm i express
 3) cree fichier index.js
