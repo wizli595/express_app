@@ -8,27 +8,33 @@ const PORT = 5000;
 
 const { users } = data;
 
-// @desc All users
-// @route GET /
+// @desc Single User by Query
+// @route GET /user/query?id=<userId>
 // @access Public
-app.get("/", (request, response) => {
-  response.json(users);
+app.get("/user/query/", (request, response) => {
+  console.log(request.query);
+  const userID = Number(request.query.id);
+  const singleUser = users[userID - 1];
+  return response.json(singleUser);
 });
 
-// @desc Single User
-// @route GET /
+// @desc Single User by ID
+// @route GET /user/:id
 // @access Public
-app.get("/:id", (request, response) => {
+app.get("/user/:id", (request, response) => {
   const userID = Number(request.params.id);
   const singleUser = users[userID - 1];
-  response.json(singleUser);
+  return response.send(singleUser);
 });
+
+// @desc All Users
+// @route GET /user
+// @access Public
+app.get("/user", (request, response) => {
+  return response.json(users);
+});
+
 // start the server in port
 app.listen(PORT, () => {
   console.log("app running on port 5000");
 });
-
-// /:id param
-
-// /route?id= query
-// body
