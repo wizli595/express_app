@@ -9,3 +9,4 @@
 8) error handler pour user id
 9) cree user plus handler
 10) mise a jour de user
+11) delete user avec id

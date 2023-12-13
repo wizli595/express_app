@@ -42,6 +42,17 @@ app.get("/user/query/", (request, response) => {
   //   }
 });
 
+// @desc Delete User
+// @route DELETE /user/delete/:id
+// @access Public
+app.delete("/user/delete/:id", (request, response) => {
+  const userID = Number(request.params.id);
+  if (userID > users.length)
+    return response.status(404).json({ message: "User Not Found" });
+  users = users.filter((item) => item.id !== userID);
+  return response.status(200).json({ message: "deleted successfully!!" });
+});
+
 // @desc Update User
 // @route PUT /user/update/:id
 // @access Public
