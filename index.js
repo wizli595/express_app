@@ -1,6 +1,6 @@
 // all imports
 import express from "express";
-
+import name from "data.js";
 // initial the express app
 const app = express();
 const PORT = 5000;
