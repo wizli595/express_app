@@ -5,4 +5,4 @@
 4) node --watch index.js (nodemon index.js)
 5) test app 
 6) 1ere route
-7) explain route / http methods / request + response
+7) explain route / http methods / request + response /comments

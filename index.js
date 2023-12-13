@@ -5,6 +5,9 @@ import express from "express";
 const app = express();
 const PORT = 5000;
 
+// @desc Tester app
+// @route GET /
+// @access Public
 app.get("/", (request, response) => {
   response.send("API IS RUNNING....");
 });
