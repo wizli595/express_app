@@ -12,8 +12,15 @@ app.use(express.json());
 // pour form data dans front-end (react)
 app.use(express.urlencoded({ extended: true }));
 
+// @desc Create User
+// @route POST /user/create
+// @access Public
 app.post("/user/create", (request, response) => {
-  users = [...users, request.body];
+  const { id, name, email } = request.body;
+  if (!id || !name || !email)
+    return response.status(400).json({ message: "somthing went wrong!!" });
+  users = [...users, { id, name, email }];
+
   response.status(201).send(request.body);
 });
 
