@@ -7,4 +7,5 @@
 6) 1ere route
 7) explain route / http methods / request + response /comments
 8) error handler pour user id
-9) cree user 
+9) cree user plus handler
+10) mise a jour de user

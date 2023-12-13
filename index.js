@@ -1,5 +1,5 @@
 // all imports
-import express from "express";
+import express, { response } from "express";
 import { data } from "./data.js";
 
 // initial the express app
@@ -40,6 +40,23 @@ app.get("/user/query/", (request, response) => {
   //   } else {
   //     return response.status(404).json({ message: "User Not Found" });
   //   }
+});
+
+// @desc Update User
+// @route PUT /user/update/:id
+// @access Public
+app.put("/user/update/:id", (request, response) => {
+  const userID = Number(request.params.id);
+  const { name, username, email } = request.body;
+  let singleUser = users[userID - 1];
+  if (!singleUser)
+    return response.status(404).json({ message: "User Not Found" });
+  if (!name || !username || !email)
+    return response.status(400).json({ message: "somthing went wrong!!" });
+  singleUser.name = name;
+  singleUser.username = username;
+  singleUser.email = email;
+  return response.status(200).send(singleUser);
 });
 
 // @desc Single User by ID
